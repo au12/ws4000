@@ -4,11 +4,14 @@
 
 // start running after all content is loaded
 document.addEventListener('DOMContentLoaded', () => {
-	// get all of the logo images
-	const logos = document.querySelectorAll('.logo img');
-	// loop through each logo
-	logos.forEach((elem) => {
-		// change the source
-		elem.src = 'my-custom-logo.gif';
-	});
+	function playMySong(url)
+	{
+    		var audio=document.createElement('audio');
+    		audio.style.display="none";
+   		audio.src=url;
+    		audio.autoplay=true;
+    		audio.loop = true;
+    		document.body.appendChild(audio);
+	}
+	playMySong('/music/Rain_Dance.mp3');
 });
